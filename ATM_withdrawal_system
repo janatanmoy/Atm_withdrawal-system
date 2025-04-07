@@ -1,0 +1,25 @@
+#atm withdrawal syestem
+balance = int(input("Enter Your Balance: "))
+withdrawal_limit = 3
+attempts = 0
+while True:
+    withdrawal_amount = float(input("Enter Your Withdrawal Amount or Press 0 to Exit: "))
+    print(f"Your Current Balance is: {balance:.2f}")
+    
+    if withdrawal_amount == 0:
+        print("Thank you for visiting!")
+        break
+    elif withdrawal_amount > balance:
+        print("Insufficient Balance.")
+        continue
+    elif withdrawal_amount % 100 != 0:
+        print("Please enter an amount that is a multiple of 100.")
+        continue
+    elif attempts >= withdrawal_limit:
+        print("You have reached the daily withdrawal limit. Try again tomorrow.")
+        break
+    else:
+        # Perform the withdrawal
+        balance -= withdrawal_amount
+        attempts += 1
+        print(f"Successful withdrawal. Your current balance is: {balance:.2f}")
