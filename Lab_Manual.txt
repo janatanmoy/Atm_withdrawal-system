@@ -1,0 +1,37 @@
+Title: Implementing Programs using State, While, For, Break, Continue, and Pass.
+Program : Design and Implementation of an ATM Withdrawal System.
+Algorithm:
+1.	Start
+2.	Initialize balance = 5000 (initial account balance).
+3.	Set withdrawal_limit = 3 (maximum withdrawal attempts allowed).
+4.	Initialize attempts = 0.
+5.	Display "Welcome to the ATM!".
+6.	Repeat Until User Exits or Withdrawal Limit is Reached:
+a. Display current balance.
+b. Prompt the user to enter the withdrawal amount (or 0 to exit).
+c. If the entered amount is 0: 
+o	Display "Exiting... Thank you for using the ATM!"
+o	Stop the transaction.
+            d. If the entered amount is greater than the balance:
+o	Display "Insufficient balance! Try again."
+o	Skip to the next iteration.
+e. If the amount is not a multiple of 100:
+o	Display "Please enter amount in multiples of 100."
+o	Skip to the next iteration.
+f. Deduct the withdrawal amount from balance.
+g. Increment attempts by 1.
+h. Display "Withdrawal successful! ₹[amount] dispensed."
+i. If attempts reaches withdrawal_limit:
+o	Display "You have reached the daily withdrawal limit. Try again tomorrow."
+o	Stop the transaction.
+7.	Display "Transaction ended."
+8.	End
+Code:
+balance = 5000  # Initial balance
+withdrawal_limit = 3  # Max withdrawal attempts
+attempts = 0  
+
+print("Welcome to the ATM!\n")
+
+while True:
+    print(f"Current Balance: ₹{balance}")
